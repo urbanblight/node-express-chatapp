@@ -1,0 +1,23 @@
+{
+  "name": "node-express-chatapp",
+  "version": "1.0.0",
+  "description": "Learning Node &amp; Express by building a chat application - following an O'Reilly course and adding my own experiments along with it.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urbanblight/node-express-chatapp.git"
+  },
+  "author": "email@matturban.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/urbanblight/node-express-chatapp/issues"
+  },
+  "homepage": "https://github.com/urbanblight/node-express-chatapp",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
