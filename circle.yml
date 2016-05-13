@@ -1,6 +1,16 @@
+########################
+# Customize the test machine
+########################
 machine:
-    services:
-        - docker
-    timezone: America/Los_Angeles
+
+  # Set the timezeone - any value from /usr/share/zoneinfo/ is valid here
+  timezone:
+    America/Los_Angeles
+
+
+########################
+# Customize test commands
+########################
 test:
-    override: true
+  override:
+    - true
