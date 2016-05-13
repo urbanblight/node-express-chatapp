@@ -1,6 +1,6 @@
 machine:
-  timezone:
-    America/Los_Angeles
+    services:
+        - docker
+    timezone: America/Los_Angeles
 test:
-  override:
-    - true
+    override: true
