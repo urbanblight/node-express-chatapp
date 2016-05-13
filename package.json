@@ -4,7 +4,8 @@
   "description": "Learning Node &amp; Express by building a chat application - following an O'Reilly course and adding my own experiments along with it.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "//": "echo \"Error: no test specified\" && exit 1",
+    "test": "true",
     "start": "node app.js"
   },
   "repository": {
