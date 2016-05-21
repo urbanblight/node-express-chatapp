@@ -1,6 +1,8 @@
 # node-express-chatapp
 Learning Node & Express by building a chat application - following an [O'Reilly course](http://shop.oreilly.com/product/0636920051152.do) and adding my own experiments along with it.
 
+[![CircleCI](https://circleci.com/gh/urbanblight/node-express-chatapp.svg?style=svg)](https://circleci.com/gh/urbanblight/node-express-chatapp?style=shield)
+
 # Getting Started
 
 Unlike the course that I am following, this app is containerized using [Docker](https://www.docker.com). In order to run this on a machine with Docker, execute the following command:
