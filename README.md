@@ -58,3 +58,8 @@ A view engine for Node. Learn more [here](https://pugjs.org).
 
 Body parsing middleware for Node. Learn more [here]
 (https://www.npmjs.com/package/body-parser).
+
+## node-uuid
+
+Generates unique identifiers. Learn more [here]
+(https://www.npmjs.com/package/node-uuid).

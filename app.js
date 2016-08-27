@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var rooms = require("./data/rooms.json");
 var bodyParser = require("body-parser");
+var uuid = require("node-uuid");
 
 app.set('view engine', 'pug');
 
@@ -22,7 +23,9 @@ app.get('/admin/rooms/add', function(req, res){
 });
 
 app.post('/admin/rooms/add', function(req, res){
-	console.log(req.body);
+	var room = {name: req.body.name, id: uuid.v4()};
+	rooms.push(room);
+	res.json(room);
 });
 
 app.listen(3000, function() {
