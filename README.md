@@ -32,3 +32,29 @@ It seems that this course was created after [Jade's move to Pug]
 (https://github.com/pugjs/pug#rename-from-jade), but the course doesn't account 
 for it. Therefore, I have used [Express' instructions on implementing Pug]
 (https://expressjs.com/en/guide/using-template-engines.html).
+
+# Dependencies
+
+## Node
+
+A JavaScript runtime environment. Learn more [here]
+(https://nodejs.org/).
+
+## Express
+
+A server framework for Node web applications. Learn more [here]
+(http://expressjs.com).
+
+## Bootstrap
+
+A front-end framework for web app design. Learn more [here]
+(http://getbootstrap.com).
+
+## Pug
+
+A view engine for Node. Learn more [here](https://pugjs.org).
+
+## body-parser
+
+Body parsing middleware for Node. Learn more [here]
+(https://www.npmjs.com/package/body-parser).
