@@ -25,7 +25,7 @@ app.get('/admin/rooms/add', function(req, res){
 app.post('/admin/rooms/add', function(req, res){
 	var room = {name: req.body.name, id: uuid.v4()};
 	rooms.push(room);
-	res.json(room);
+	res.redirect('/admin/rooms');
 });
 
 app.listen(3000, function() {
