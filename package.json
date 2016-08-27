@@ -1,6 +1,6 @@
 {
   "name": "node-express-chatapp",
-  "version": "0.3.1",
+  "version": "0.3.4",
   "description": "Learning Node &amp; Express by building a chat application - following an O'Reilly course and adding my own experiments along with it.",
   "main": "app.js",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/urbanblight/node-express-chatapp",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "pug": "^2.0.0-beta5"
