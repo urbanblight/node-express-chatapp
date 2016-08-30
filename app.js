@@ -38,12 +38,20 @@ app.get('/admin/rooms/delete/:id', function(req, res){
 app.get('/admin/rooms/edit/:id', function(req, res){
     var roomId = req.params.id;
     room = _.find(rooms, r => r.id === roomId);
+    if(!room){
+        res.sendStatus(404);
+        return;
+    }
     res.render("edit");
 });
 
 app.post('/admin/rooms/edit/:id', function(req, res){
 	var roomId = req.params.id;
     room = _.find(rooms, r => r.id === roomId);
+    if(!room){
+        res.sendStatus(404);
+        return;
+    }
     room.name = req.body.name;
 	res.redirect('/admin/rooms');
 });
