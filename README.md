@@ -66,6 +66,10 @@ changes some syntax. See [the full migration guide]
 Body parsing middleware for Node. Learn more [here]
 (https://www.npmjs.com/package/body-parser).
 
+## lodash
+
+Utility function library. Learn more [here](https://lodash.com/).
+
 ## node-uuid
 
 Generates unique identifiers. Learn more [here]

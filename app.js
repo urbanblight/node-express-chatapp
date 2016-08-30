@@ -3,6 +3,7 @@ var app = express();
 var rooms = require("./data/rooms.json");
 var bodyParser = require("body-parser");
 var uuid = require("node-uuid");
+var _ = require("lodash");
 
 app.set('view engine', 'pug');
 
@@ -32,6 +33,19 @@ app.get('/admin/rooms/delete/:id', function(req, res){
     var roomId = req.params.id;
     rooms = rooms.filter(r => r.id !== roomId);
     res.redirect("/admin/rooms");
+});
+
+app.get('/admin/rooms/edit/:id', function(req, res){
+    var roomId = req.params.id;
+    room = _.find(rooms, r => r.id === roomId);
+    res.render("edit");
+});
+
+app.post('/admin/rooms/edit/:id', function(req, res){
+	var roomId = req.params.id;
+    room = _.find(rooms, r => r.id === roomId);
+    room.name = req.body.name;
+	res.redirect('/admin/rooms');
 });
 
 app.listen(3000, function() {
