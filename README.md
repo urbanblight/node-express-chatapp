@@ -24,15 +24,6 @@ To verify that the app is working, simply make a request to
 `[docker machine ip]:[local port]` via CURL or http in a browser, where 
 `[docker machine ip]` is the ip of your Docker machine.
 
-# Other changes of note
-
-## Jade -> Pug
-
-It seems that this course was created after [Jade's move to Pug]
-(https://github.com/pugjs/pug#rename-from-jade), but the course doesn't account 
-for it. Therefore, I have used [Express' instructions on implementing Pug]
-(https://expressjs.com/en/guide/using-template-engines.html).
-
 # Dependencies
 
 ## Node
@@ -53,6 +44,22 @@ A front-end framework for web app design. Learn more [here]
 ## Pug
 
 A view engine for Node. Learn more [here](https://pugjs.org).
+
+### Jade -> Pug v2
+
+It seems that this course was created after [Jade's move to Pug]
+(https://github.com/pugjs/pug#rename-from-jade), but the course doesn't account 
+for it. Therefore, I have used [Express' instructions on implementing Pug]
+(https://expressjs.com/en/guide/using-template-engines.html).
+
+#### Pug v2
+
+I am going through this course at the time that Pug 2 was released, which
+changes some syntax. See [the full migration guide]
+(https://pugjs.org/api/migration-v2.html) for details.
+
+* [Attribute Interpolation]
+(https://pugjs.org/api/migration-v2.html#attribute-interpolation)
 
 ## body-parser
 

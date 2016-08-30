@@ -11,5 +11,8 @@ block content
 		tbody
 			each room in rooms
 				tr
+					td(style="width: 50px;")
+						a(href=`/admin/rooms/delete/${room.id}`)
+							span.glyphicon.glyphicon-remove
 					td= room.name
 					td= room.id
