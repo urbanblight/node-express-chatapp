@@ -8,9 +8,10 @@ app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get('/', function(req, res){
-	res.render('index', {title: "Home"});
-});
+app.route('/')
+	.get(function(req, res){
+			res.render('index', {title: "Home"});
+	});
 
 var adminRouter = require("./admin");
 app.use("/admin", adminRouter);
