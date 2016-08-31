@@ -8,6 +8,11 @@ app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(function(req, res, next) {
+	console.log(`Incoming request: ${req.url}`);
+	next();
+});
+
 app.route('/')
 	.get(function(req, res){
 			res.render('index', {title: "Home"});
