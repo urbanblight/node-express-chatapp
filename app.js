@@ -6,7 +6,7 @@ app.set('view engine', 'pug');
 
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.route('/')
 	.get(function(req, res){
