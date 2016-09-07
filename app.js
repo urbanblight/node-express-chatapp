@@ -18,6 +18,10 @@ app.route('/')
 			res.render('index', {title: "Home"});
 	});
 
+app.use("/admin", function(req, res, next){
+	console.log("admin request: " + req.url);
+	next();
+});
 var adminRouter = require("./admin");
 app.use("/admin", adminRouter);
 
