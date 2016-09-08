@@ -35,7 +35,7 @@ router.route('/rooms/edit/:id')
 		var roomId = req.params.id;
 		room = _.find(rooms, r => r.id === roomId);
 		if(!room){
-			res.sendStatus(404);
+			next(new Error("Room not found!"));
 			return;
 		}
 		res.locals.room = room;
