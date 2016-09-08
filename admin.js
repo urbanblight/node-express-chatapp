@@ -31,22 +31,20 @@ router.route('/rooms/delete/:id')
 	});
 
 router.route('/rooms/edit/:id')
+	.all(function(req, res, next) {
+		var roomId = req.params.id;
+		room = _.find(rooms, r => r.id === roomId);
+		if(!room){
+			next(new Error("Room not found!"));
+			return;
+		}
+		res.locals.room = room;
+		next();
+	})
 	.get(function(req, res){
-			var roomId = req.params.id;
-			room = _.find(rooms, r => r.id === roomId);
-			if(!room){
-				res.sendStatus(404);
-				return;
-			}
 			res.render("edit");
 	})
 	.post(function(req, res){
-			var roomId = req.params.id;
-			room = _.find(rooms, r => r.id === roomId);
-			if(!room){
-				res.sendStatus(404);
-				return;
-			}
-			room.name = req.body.name;
+			res.locals.room.name = req.body.name;
 			res.redirect(req.baseUrl + '/rooms');
 	});
