@@ -74,3 +74,8 @@ Utility function library. Learn more [here](https://lodash.com/).
 
 Generates unique identifiers. Learn more [here]
 (https://www.npmjs.com/package/node-uuid).
+
+## jQuery
+
+Javascript library for DOM manipulation, Ajax, event-handling, animation and 
+more. Learn more [here](http://jquery.com/).
