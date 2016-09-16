@@ -85,3 +85,6 @@ more. Learn more [here](http://jquery.com/).
 Debugging toolbar for express. Learn more [here]
 (https://www.npmjs.com/package/express-debug).
 
+## morgan
+
+HTTP request logger. Learn more [here](https://www.npmjs.com/package/morgan).

@@ -4,7 +4,12 @@ var bodyParser = require("body-parser");
 
 app.set('view engine', 'pug');
 
-app.use(require("morgan")("combined"));
+// create a write stream (in append mode) 
+var fs = require("fs");
+var accessLogStream = fs.createWriteStream(__dirname + '/access.log', 
+	{flags: 'a'});
+
+app.use(require("morgan")("combined", {stream: accessLogStream}));
 
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
