@@ -2,7 +2,8 @@ var express = require("express");
 router = express.Router();
 module.exports = router;
 
-_ = require("lodash");
+var _ = require("lodash");
+var uuid = require("node-uuid");
 
 var rooms = require("./data/rooms.json");
 var messages = require("./data/messages.json");
@@ -25,4 +26,19 @@ router.route('/rooms/:roomId/messages')
 			room: room,
 			messages: roomMessages
 		});
+	})
+	.post(function (req, res) {
+		var roomId = req.params.roomId;
+		var message = {
+			roomId: roomId,
+			text: req.body.text,
+			userId: "44f885e8-87e9-4911-973c-4074188f408a",
+			messageId: uuid.v4()
+		};
+		messages.push(message);
+		res.sendStatus(200);
+		
+	})
+	.delete(function (req, res) {
+		var roomId = req.params.roomId;
 	});
