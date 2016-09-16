@@ -1,6 +1,6 @@
 {
   "name": "node-express-chatapp",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Learning Node &amp; Express by building a chat application - following an O'Reilly course and adding my own experiments along with it.",
   "main": "app.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "pug": "^2.0.0-beta5"
   },
   "devDependencies": {
-    "express-debug": "^1.1.1"
+    "express-debug": "^1.1.1",
+    "morgan": "^1.7.0"
   }
 }
