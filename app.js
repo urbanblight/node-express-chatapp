@@ -7,7 +7,9 @@ app.set('view engine', 'pug');
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(express.static("node_modules/jquery/dist"));
+
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
 	console.log(`Incoming request: ${req.url}`);
