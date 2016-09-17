@@ -40,6 +40,11 @@ app.use("/admin", adminRouter);
 var apiRouter = require("./api");
 app.use("/api", apiRouter);
 
+app.use(function(error, req, res, next) {
+	console.log(error);
+	res.send("Custom error handler");
+});
+
 app.listen(3000, function() {
 	console.log("Chat app listening on port 3000");
 });
