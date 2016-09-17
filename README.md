@@ -24,6 +24,17 @@ To verify that the app is working, simply make a request to
 `[docker machine ip]:[local port]` via CURL or http in a browser, where 
 `[docker machine ip]` is the ip of your Docker machine.
 
+## Configuration
+
+To run this application in production (not recommended, but referenced in the 
+course), set the `NODE_ENV` environment variable to the container:
+
+ `docker run -d -p [local port]:3000 -e "NODE_ENV=production" urbanblight/node-express-chatapp`
+
+For information on setting environment variables in the container and the `-e` 
+flag, review [Docker's documentation]
+(https://docs.docker.com/engine/reference/run/#/env-environment-variables).
+
 # Dependencies
 
 ## Node
