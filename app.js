@@ -27,6 +27,7 @@ app.use(function(req, res, next) {
 
 app.route('/')
 	.get(function(req, res){
+	    throw new Error("Testing production error handling");
 		res.render('home', {title: "Home"});
 	});
 
