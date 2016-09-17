@@ -26,9 +26,15 @@ app.use(function(req, res, next) {
 });
 
 app.route('/')
-	.get(function(req, res){
-	    throw new Error("Testing production error handling");
-		res.render('home', {title: "Home"});
+	.get(function(req, res, next){
+		setTimeout(function() {
+			try {
+				throw new Error("Testing async error handling");
+				res.render('home', {title: "Home"});
+			} catch (error) {
+				next(error);
+			};
+		}, 10000);
 	});
 
 app.use("/admin", function(req, res, next){
@@ -42,7 +48,7 @@ app.use("/api", apiRouter);
 
 app.use(function(error, req, res, next) {
 	console.log(error);
-	res.send("Custom error handler");
+	res.send(error.message);
 });
 
 app.listen(3000, function() {
