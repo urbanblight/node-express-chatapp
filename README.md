@@ -79,3 +79,12 @@ Generates unique identifiers. Learn more [here]
 
 Javascript library for DOM manipulation, Ajax, event-handling, animation and 
 more. Learn more [here](http://jquery.com/).
+
+## express-debug
+
+Debugging toolbar for express. Learn more [here]
+(https://www.npmjs.com/package/express-debug).
+
+## morgan
+
+HTTP request logger. Learn more [here](https://www.npmjs.com/package/morgan).
