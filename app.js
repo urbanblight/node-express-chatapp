@@ -27,14 +27,7 @@ app.use(function(req, res, next) {
 
 app.route('/')
 	.get(function(req, res, next){
-		setTimeout(function() {
-			try {
-				throw new Error("Testing async error handling");
-				res.render('home', {title: "Home"});
-			} catch (error) {
-				next(error);
-			};
-		}, 10000);
+		res.render('home', {title: "Home"});
 	});
 
 app.use("/admin", function(req, res, next){
