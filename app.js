@@ -4,12 +4,7 @@ var bodyParser = require("body-parser");
 
 app.set('view engine', 'pug');
 
-// create a write stream (in append mode) 
-var fs = require("fs");
-var accessLogStream = fs.createWriteStream(__dirname + '/access.log', 
-	{flags: 'a'});
-
-app.use(require("morgan")("combined", {stream: accessLogStream}));
+app.use(require('./logging.js'));
 
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
@@ -34,8 +29,13 @@ app.use("/admin", function(req, res, next){
 	console.log("admin request: " + req.url);
 	next();
 });
+
+var authReader = require("./auth");
+app.use("/auth", authReader);
+
 var adminRouter = require("./admin");
 app.use("/admin", adminRouter);
+
 var apiRouter = require("./api");
 app.use("/api", apiRouter);
 

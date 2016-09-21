@@ -1,6 +1,6 @@
 {
   "name": "node-express-chatapp",
-  "version": "0.8.6",
+  "version": "0.9.2",
   "description": "Learning Node &amp; Express by building a chat application - following an O'Reilly course and adding my own experiments along with it.",
   "main": "app.js",
   "scripts": {
@@ -25,6 +25,8 @@
     "jquery": "^3.1.0",
     "lodash": "^4.15.0",
     "node-uuid": "^1.4.7",
+    "passport-local": "^1.0.0",
+    "password": "^0.1.1",
     "pug": "^2.0.0-beta5"
   },
   "devDependencies": {
