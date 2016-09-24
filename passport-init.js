@@ -1,5 +1,5 @@
 var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy();
+var LocalStrategy = require("passport-local").Strategy;
 var users = require("./data/users.json");
 var _ = require("lodash");
 
@@ -11,3 +11,11 @@ passport.use(new LocalStrategy(function(username, password, done){
 	}
 	done(null, user);
 }));
+
+passport.serializeUser(function(user, done){
+	done(null, user);
+});
+
+passport.deserializeUser(function(user, done){
+	done(null, user);
+});

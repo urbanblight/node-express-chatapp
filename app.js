@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require("body-parser");
+var passport = require("passport");
+require("./passport-init.js");
 
 app.set('view engine', 'pug');
 
@@ -15,6 +17,12 @@ require('express-debug')(app, {});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use(require('express-session')({
+	secret: 'keyboard cat', resave: false, saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(function(req, res, next) {
 	console.log(`Incoming request: ${req.url}`);
 	next();
@@ -22,6 +30,7 @@ app.use(function(req, res, next) {
 
 app.route('/')
 	.get(function(req, res, next){
+		console.log(req);
 		res.render('home', {title: "Home"});
 	});
 
@@ -30,8 +39,8 @@ app.use("/admin", function(req, res, next){
 	next();
 });
 
-var authReader = require("./auth");
-app.use("/auth", authReader);
+var authRouter = require("./auth");
+app.use(authRouter);
 
 var adminRouter = require("./admin");
 app.use("/admin", adminRouter);
